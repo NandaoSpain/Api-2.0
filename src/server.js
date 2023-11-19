@@ -1,5 +1,7 @@
 require("express-async-errors");
 
+const database = require("./database/sqlite")
+
 const AppError = require("./utils/AppError")
 
 const express = require("express"); // aqui estou importando o express pra variavel
@@ -10,6 +12,8 @@ const app = express(); // aqui estou inicializando o express
 app.use(express.json()); //habilita o JSON no app
 
 app.use(routes);
+
+database();
 
 app.use((error, request, response, next) => {
     if(error instanceof AppError) {

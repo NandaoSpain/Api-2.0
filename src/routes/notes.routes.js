@@ -2,7 +2,7 @@ const { Router } = require("express");
 
 const NotesController = require("../controllers/NotesController");
 
-const notesRoutes = Router(); // funcionalidade Router de dentro do express
+const notesRoutes = Router();
 
 const notesController = new NotesController();
 

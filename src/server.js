@@ -21,10 +21,12 @@ app.use((error, request, response, next) => {
         return response.status(error.statusCode).json({
             status: "error",
             message: error.message
+            
         });
     }
 
     return response.status(500).json({
+        error: console.log(error),
         status: "error",
         message: "Internal server error"
     })
